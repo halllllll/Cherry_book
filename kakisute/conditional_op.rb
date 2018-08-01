@@ -1,13 +1,12 @@
-def greet(country)
+country='japan'
+greet = 
     if country=='japan'
-        puts 'んちゃ'
+        'んちゃ'
     elsif country=='us'
-        puts 'hello'
+        'hello'
     elsif country=='italy'
-        puts 'ciao'
+        'ciao'
     else
-        puts '???'
+        '???'
     end
-end
-
-greet('italy')
+puts greet
