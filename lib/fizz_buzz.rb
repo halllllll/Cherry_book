@@ -10,12 +10,6 @@ def fizz_buzz(n)
     end
 end
 
-# puts fizz_buzz(1)
-# puts fizz_buzz(2)
-# puts fizz_buzz(3)
-# puts fizz_buzz(5)
-# puts fizz_buzz(15)
-
 require 'minitest/autorun'
 
 class FizzBuzzTest<Minitest::Test
@@ -25,6 +19,7 @@ class FizzBuzzTest<Minitest::Test
         assert_equal 'Fizz', fizz_buzz(3)
         assert_equal '4', fizz_buzz(4)
         assert_equal 'Buzz', fizz_buzz(5)
+        assert_equal 'Fizz', fizz_buzz(6)
         assert_equal 'FizzBuzz', fizz_buzz(15)
     end
 end
