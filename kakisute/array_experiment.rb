@@ -27,3 +27,6 @@ p new_numbers
 
 even_numbers = numbers.select{|n|n.even?}
 p even_numbers
+
+sum = numbers.inject(0){|result, n|result+n}
+p sum
