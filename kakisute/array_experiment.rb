@@ -14,3 +14,13 @@ numbers.each do |n|
 end
 
 puts sum
+
+sum = 0
+numbers.each {|n|
+    sum+=n
+}
+
+puts sum
+
+new_numbers = numbers.map{|n|n*10}
+puts new_numbers
