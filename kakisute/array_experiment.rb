@@ -40,3 +40,6 @@ p language
 
 strings = [1, 2, 3, 4].map(&:to_s)
 p strings
+
+a = [1, 2, 3, 4, 5]
+p a[3..6]
