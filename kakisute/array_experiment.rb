@@ -84,3 +84,6 @@ p greeting("yamaha", "honda", "kawasaki", "suzuki")
 
 # 文字列の配列の%記法
 p %w!same mesuraion mesugorira rame mesu..!
+# 文字列->文字の配列
+moji = ("K".."j")
+p moji.to_a.join.chars
