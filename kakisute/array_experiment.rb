@@ -34,3 +34,6 @@ p sum
 week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].inject('Sun'){|result, n| result+n}
 
 p week
+
+language = ['ruby', 'perl', 'python'].map{|l|l.upcase}
+p language
