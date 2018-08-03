@@ -24,3 +24,6 @@ puts sum
 
 new_numbers = numbers.map{|n|n*10}
 puts new_numbers
+
+even_numbers = numbers.select{|n|n.even?}
+p even_numbers
