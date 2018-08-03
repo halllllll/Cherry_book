@@ -58,3 +58,7 @@ range2array = (1..5).to_a
 range2strarray = ('a'..'k').to_a
 p range2array
 p range2strarray
+
+numbers = []
+(1..10).step(2){|n|numbers<<n}
+p numbers
