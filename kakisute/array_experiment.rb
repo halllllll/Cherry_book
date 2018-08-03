@@ -53,3 +53,8 @@ p liquid?(-1)
 p liquid?(0)
 p liquid?(99)
 p liquid?(100)
+
+range2array = (1..5).to_a
+range2strarray = ('a'..'k').to_a
+p range2array
+p range2strarray
