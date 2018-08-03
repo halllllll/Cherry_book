@@ -37,3 +37,6 @@ p week
 
 language = ['ruby', 'perl', 'python'].map(&:upcase)
 p language
+
+strings = [1, 2, 3, 4].map(&:to_s)
+p strings
