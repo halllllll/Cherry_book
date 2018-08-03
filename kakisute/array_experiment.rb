@@ -81,3 +81,6 @@ end
 p greeting("tanaka")
 p greeting(["tanaka", "suzuki"])
 p greeting("yamaha", "honda", "kawasaki", "suzuki")
+
+# 文字列の配列の%記法
+p %w!same mesuraion mesugorira rame mesu..!
