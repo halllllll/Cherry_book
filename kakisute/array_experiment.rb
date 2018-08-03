@@ -30,3 +30,7 @@ p even_numbers
 
 sum = numbers.inject(0){|result, n|result+n}
 p sum
+
+week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].inject('Sun'){|result, n| result+n}
+
+p week
