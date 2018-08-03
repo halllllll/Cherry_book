@@ -43,3 +43,13 @@ p strings
 
 a = [1, 2, 3, 4, 5]
 p a[3..6]
+
+def liquid?(temperture)
+    # 0<=temperture && temperture<100
+    (0...100).include?(temperture)
+end
+
+p liquid?(-1)
+p liquid?(0)
+p liquid?(99)
+p liquid?(100)
