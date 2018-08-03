@@ -35,5 +35,5 @@ week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].inject('Sun'){|result, n| resu
 
 p week
 
-language = ['ruby', 'perl', 'python'].map{|l|l.upcase}
+language = ['ruby', 'perl', 'python'].map(&:upcase)
 p language
