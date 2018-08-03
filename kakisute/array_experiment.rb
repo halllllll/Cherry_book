@@ -4,7 +4,7 @@ a.delete_if do |n|
     n.even?
 end
 
-print a
+p a
 
 numbers = [1, 2, 3, 4]
 sum = 0
@@ -13,17 +13,17 @@ numbers.each do |n|
     sum+=sum_value
 end
 
-puts sum
+p sum
 
 sum = 0
 numbers.each {|n|
     sum+=n
 }
 
-puts sum
+p sum
 
 new_numbers = numbers.map{|n|n*10}
-puts new_numbers
+p new_numbers
 
 even_numbers = numbers.select{|n|n.even?}
 p even_numbers
