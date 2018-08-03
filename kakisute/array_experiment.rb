@@ -72,3 +72,12 @@ p a-b
 
 e, *f = 100, 200, 300
 p e, f
+
+# Variable-length arrays in method
+# わりとかなり寛容。列挙でも配列でもいい
+def greeting(*names)
+    "#{names.join(", ")}, hello!! welcome!"
+end
+p greeting("tanaka")
+p greeting(["tanaka", "suzuki"])
+p greeting("yamaha", "honda", "kawasaki", "suzuki")
