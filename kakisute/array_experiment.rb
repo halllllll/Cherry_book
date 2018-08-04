@@ -87,3 +87,22 @@ p %w!same mesuraion mesugorira rame mesu..!
 # 文字列->文字の配列
 moji = ("K".."j")
 p moji.to_a.join.chars
+
+# Array.newで配列の初期化
+# 初期値は指定しないとnil
+arr = Array.new(5)
+p arr
+# ブロックに渡るのは添字、戻り値は要素
+arr3 = Array.new(3){|idx|idx.to_s}
+p arr3
+# 初期値を設定してもミュータブルオブジェクトは同一のオブジェクトを参照する
+arr2 = Array.new(5, 'yo')
+p arr2
+s = arr2[2]
+s.upcase!
+p arr2
+# ブロックで初期値を渡せばブロックが呼ばれるたびに初期化されるので要素はそれぞれ別のオブジェクトになる
+arr4 = Array.new(5){|idx| 'yo'}
+s = arr4[2]
+s.upcase!
+p arr4
