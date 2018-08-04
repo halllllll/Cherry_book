@@ -12,3 +12,9 @@ puts regex.class
 # if matches...
 s = '123-11, 238382, 242-5893あばば 503-241-395 yoyo 翼を与えよ111-9999 9822 fd938'
 puts s=~regex
+
+# capture if matches
+str = "今日は2018年8月4日です"
+regex = /(\d+)年(\d+)月(\d+)日/
+p regex.match(str)  # matchdata object
+puts str.scan(regex)
