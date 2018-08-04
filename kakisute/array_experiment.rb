@@ -106,3 +106,9 @@ arr4 = Array.new(5){|idx| 'yo'}
 s = arr4[2]
 s.upcase!
 p arr4
+# 数値はイミュータブル（破壊的な変更が適用できる意味で）なので↑の限りではない
+arr5 = Array.new(5, 0)
+p arr5
+a = arr5[3]
+a = 10
+p arr5
