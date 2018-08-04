@@ -24,3 +24,8 @@ puts str.scan(regex)
 regex = /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/
 mtch = regex.match(str)
 puts mtch[:year], mtch[:day], mtch['day'], mtch[0] # also string and index
+
+# []/sliceで取得
+puts str[/(\d+)年(\d+)月(\d+)日/, 1]
+# メタ文字で名前を付けていたならそれで指定しても取得できる
+puts str.slice(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, :month)
