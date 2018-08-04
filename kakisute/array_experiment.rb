@@ -117,3 +117,15 @@ p arr5
 fruites = ['apple', 'banana', 'melon']
 indexed_fruites = fruites.map.with_index{|v, idx| "#{idx}: #{v}"}
 p indexed_fruites
+
+# 多重配列はブロックに渡すとき要素ぶんの引数を与えればそれぞれに割り当てられる
+
+dimension = [
+    [10, 20],
+    [30, 40],
+    [50, 60],
+]
+
+dimension.map{|x, y|
+    p "#{x}*#{y}=#{x*y}"
+}
