@@ -129,3 +129,10 @@ dimension = [
 dimension.map{|x, y|
     p "#{x}*#{y}=#{x*y}"
 }
+
+# Numeric::step
+a = []
+1.step(10, 2){|n|
+    a<<n
+}
+p a
