@@ -19,3 +19,8 @@ regex = /(\d+)年(\d+)月(\d+)日/
 p regex.match(str)  # matchdata object
 p str.match(regex)  # regex and string class both has match method
 puts str.scan(regex)
+
+# access by meta char
+regex = /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/
+mtch = regex.match(str)
+puts mtch[:year], mtch[:day]
