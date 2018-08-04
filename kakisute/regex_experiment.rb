@@ -17,5 +17,5 @@ puts s=~regex
 str = "今日は2018年8月4日です"
 regex = /(\d+)年(\d+)月(\d+)日/
 p regex.match(str)  # matchdata object
-p str.match(regex)
+p str.match(regex)  # regex and string class both has match method
 puts str.scan(regex)
