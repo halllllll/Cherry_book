@@ -136,3 +136,8 @@ a = []
     a<<n
 }
 p a
+
+# while operator
+a = []
+a<<1 while a.size<5
+p a
