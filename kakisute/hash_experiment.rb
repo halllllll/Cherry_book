@@ -5,3 +5,7 @@ p dict
 # シンボルにした場合
 dict = {'japan':'jp', 'amerika':'us', 'china':'cn'}
 p dict
+
+# hash展開
+new_dict = {'rusia':'ru', 'brazil':'br', **dict}
+p new_dict
