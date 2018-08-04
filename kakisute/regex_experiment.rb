@@ -43,3 +43,6 @@ puts text.gsub(/[_:.]/, h)
 # 組み込み変数にマッチした結果を保存
 str =~ regex
 p $~, $&
+
+# Regexp.last_matchでも組み込み変数と同じ
+p Regexp.last_match
