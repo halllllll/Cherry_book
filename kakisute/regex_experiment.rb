@@ -23,4 +23,4 @@ puts str.scan(regex)
 # access by meta char
 regex = /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/
 mtch = regex.match(str)
-puts mtch[:year], mtch[:day]
+puts mtch[:year], mtch[:day], mtch['day'], mtch[0] # also string and index
