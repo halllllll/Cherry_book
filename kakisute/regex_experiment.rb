@@ -29,3 +29,13 @@ puts mtch[:year], mtch[:day], mtch['day'], mtch[0] # also string and index
 puts str[/(\d+)年(\d+)月(\d+)日/, 1]
 # メタ文字で名前を付けていたならそれで指定しても取得できる
 puts str.slice(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, :month)
+
+# 置換 gsub
+text = '123_45_7-999::3928.2224.232'
+# 一致する文字列をそのまま置換（配列で複数渡すことはできない）
+puts text.gsub('_', '-')
+# 文字列を正規表現で指定
+puts text.gsub(/[_:.]/, '-')
+# hashによる置換ルール
+h = {':'=>' ', '.'=>','}
+puts text.gsub(/[_:.]/, h)
