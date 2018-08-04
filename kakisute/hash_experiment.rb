@@ -9,3 +9,6 @@ p dict
 # hash展開
 new_dict = {'rusia':'ru', 'brazil':'br', **dict}
 p new_dict
+
+# hash merge
+p new_dict.merge({'france':'fr', 'germany':'de'})
