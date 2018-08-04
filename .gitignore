@@ -1,3 +1,5 @@
 git_usage
 vendor
 .bundle
+.rspec
+Gemfile.lock
