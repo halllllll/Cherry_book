@@ -112,3 +112,8 @@ p arr5
 a = arr5[3]
 a = 10
 p arr5
+
+# 添字付きで取得
+fruites = ['apple', 'banana', 'melon']
+indexed_fruites = fruites.map.with_index{|v, idx| "#{idx}: #{v}"}
+p indexed_fruites
