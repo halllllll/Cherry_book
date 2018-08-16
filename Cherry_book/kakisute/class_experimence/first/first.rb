@@ -20,3 +20,18 @@ users << User.new('モカ', '青葉', 'Aftergrow')
 users.each do |user|
     puts user.selfExplanatory
 end
+
+# instance var
+
+class User2
+    def initialize(name)
+        @name = name
+    end
+
+    def hello
+        "Hello, I am #{@name}"
+    end
+end
+
+user2 = User2.new('Alice')
+puts user2.hello
