@@ -3,4 +3,3 @@ vendor
 .bundle
 .rspec
 Gemfile.lock
-.DS_Store
