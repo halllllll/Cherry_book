@@ -21,4 +21,11 @@ RSpec.describe Calculation do
         it '' do
         end
     end
+
+    # it(example/specify)のあとの引数を省略すると自動的に説明が付加される
+    it do
+        expect(@calculation.add(1, 3)).to eq 4
+    end
+    # pending: ブロックを記述しない場合に発生
+    it '1-1=0?'
 end
