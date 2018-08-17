@@ -6,6 +6,9 @@ RSpec.describe Calculation do
     before do
         @calculation = Calculation.new
     end
+    # before以外にexampleで使う変数を定義するものとしてsubjectがある
+    # subject
+    subject(:calc){Calculation.new}
     context "正常処理" do
         it "1+1=2 ? " do
             #calculation = Calculation.new
@@ -14,7 +17,8 @@ RSpec.describe Calculation do
         end
         it "2+5=7 ? " do
             #calculation = Calculation.new
-            expect(@calculation.add(2, 5)).to eq 7
+            # expect(@calculation.add(2, 5)).to eq 7
+            expect(calc.add(2, 5)).to eq 7
         end
     end
     context "異常処理" do
@@ -32,7 +36,8 @@ RSpec.describe Calculation do
     # mathcer
     describe 'mather test' do
         it 'should not equal' do
-            expect(@calculation.add(2, 100)).not_to eq 29
+            # expect(@calculation.add(2, 100)).not_to eq 29
+            expect(calc.add(2, 100)).not_to eq 29
         end
         it 'should be positive number' do
             expect(@calculation.add(19, -13)).to be >0
@@ -41,7 +46,8 @@ RSpec.describe Calculation do
             expect(@calculation.add(1,10)).to be_between(1, 14)
         end
         it 'should have "add" method' do
-            expect(@calculation).to respond_to :add
+            # expect(@calculation).to respond_to :add
+            expect(calc).to respond_to :add
         end
         it 'should be interger number' do
             expect(@calculation.add(29, 53).integer?).to be true
