@@ -7,6 +7,6 @@ RSpec.describe Gate do
     subject(:ticket){Ticket.new(150)}
     it 'should be created' do
         umeda.enter(ticket)
-        expect(juso.exit(ticket)).to be_true
+        expect(juso.exit(ticket)).to be true
     end
 end
