@@ -5,13 +5,17 @@ RSpec.describe Gate do
     subject(:juso){Gate.new(:juso)}
     subject(:mikuni){Gate.new(:mikuni)}
 
-    subject(:ticket){Ticket.new(150)}
-    it 'should be created' do
-        umeda.enter(ticket)
-        expect(juso.exit(ticket)).to be true
+    # subject(:ticket){Ticket.new(150)}
+    describe 'check neither can create correct object' do
+        let(:ticket){Ticket.new(150)}       
+        it 'should be created' do
+            umeda.enter(ticket)
+            expect(juso.exit(ticket)).to be true
+        end
     end
 
     context 'from umeda to mikuni when fare is not enough' do
+        let(:ticket){Ticket.new(150)}
         it 'can\'t exit'  do
             umeda.enter(ticket)
             expect(mikuni.exit(ticket)).not_to be true
