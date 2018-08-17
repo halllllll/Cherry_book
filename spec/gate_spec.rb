@@ -21,4 +21,21 @@ RSpec.describe Gate do
             expect(mikuni.exit(ticket)).not_to be true
         end
     end
+
+    context 'from umeda to mikuni when fare is ENOUGH' do
+        let(:ticket){Ticket.new(190)}
+        it 'can exit' do
+            umeda.enter(ticket)
+            expect(mikuni.exit(ticket)).to be true
+        end
+    end
+
+    context 'from juso to mikuni when fare of 150' do
+        let(:ticket){Ticket.new(150)}
+        it 'can exit' do
+            juso.enter(ticket)
+            expect(mikuni.exit(ticket)).to be true
+        end
+    end
+
 end
