@@ -28,4 +28,23 @@ RSpec.describe Calculation do
     end
     # pending: ブロックを記述しない場合に発生
     it '1-1=0?'
+
+    # mathcer
+    describe 'mather test' do
+        it 'should not equal' do
+            expect(@calculation.add(2, 100)).not_to eq 29
+        end
+        it 'should be positive number' do
+            expect(@calculation.add(19, -13)).to be >0
+        end
+        it 'should be a number between' do
+            expect(@calculation.add(1,10)).to be_between(1, 14)
+        end
+        it 'should have "add" method' do
+            expect(@calculation).to respond_to :add
+        end
+        it 'should be interger number' do
+            expect(@calculation.add(29, 53).integer?).to be true
+        end
+    end
 end
