@@ -37,5 +37,4 @@ RSpec.describe Gate do
             expect(mikuni.exit(ticket)).to be true
         end
     end
-
 end
