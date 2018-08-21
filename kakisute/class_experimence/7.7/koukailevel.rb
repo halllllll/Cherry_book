@@ -86,3 +86,30 @@ class User
     # private_class_method :yo # -> NoMethodError
 end
 puts User.yo
+
+# private/publicキーワードは実際はメソッドなので引数としてメソッドのシンボルを渡せる。書き方が簡略化されるしキーワード以下のすべてのメンバに効果が及ぶこともない
+
+class User
+    # public
+    def foo
+        'foo'
+    end
+
+    # public
+    def bar
+        'bar'
+    end
+
+    # change to private method
+    private :foo, :bar
+
+    # public
+    def baz
+        'baz'
+    end
+end
+
+user = User.new
+# puts user.foo -> NoMethodError
+# puts user.bar -> NoMethodError
+puts user.baz
