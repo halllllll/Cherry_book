@@ -48,3 +48,41 @@ dvd = DVD.new
 # サブクラスによってover rideされたスーパークラスのprivate methodになる
 puts dvd.to_s
 
+# class medhodはデフォルトではprivateキーワード下でもprivateにはならない
+class User
+    private
+    def self.yo
+        "yo"
+    end
+end
+
+# 本来ならレシーバー付きでは呼び出せないはずのprivate methodが、'self'付き(class method)だとよびだせてしまう
+puts User.yo # -> yo
+
+# class methodをprivate methodにする方法1: class << self 構文
+class User
+    class << self
+        # この場合でもいちいちprivateって書かなきゃいけないのクソ
+        # ネストが深くなるのもクソ
+        # （個人の意見です）
+        private
+        # selfは必要ないけど
+        def yo
+            'yoyoyo'
+        end
+    end
+end
+
+# puts User.yo # -> NoMethodError （個人的にはrubyのエラーってわかりにくすぎる≒不親切と思う ）
+
+# class methodをprivate methodにする方法2: private_class_methodキーワード
+# class methodの定義後に後悔レベルをprivate class methodに変更
+
+class User
+    def self.yo
+        'yo'
+    end
+    # 定義後に変更
+    # private_class_method :yo # -> NoMethodError
+end
+puts User.yo
