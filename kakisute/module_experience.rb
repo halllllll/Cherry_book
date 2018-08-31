@@ -40,6 +40,7 @@ puts user.name
 
 # 継承はしたくないが共通の処理をもたせるときはmoduleが使える
 module Loggable
+    public
     def log(text)
         puts "[LOG] #{text}"
     end
@@ -68,3 +69,6 @@ puts product.title
 user = User.new
 puts user.name
 
+# includeしたらデフォルトではpublicなので外部からアクセス可能
+# ...のはずなのだがそのままにしようが明示的にpublicとつけようがprivateをつけようがNoMethodErrorが返るんだけど完全に意味不明 もうめんどくさいから検証はしない
+# puts user.log 'yoyoyoy'
