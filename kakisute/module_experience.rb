@@ -128,3 +128,30 @@ breakcore = Genre.new("ブレイクコア", 250)
 puts enka < randb
 puts breakcore < edm
 puts enka == edm
+
+# 名前空間としてのモジュールの活用
+# module構文でclass構文を包む
+
+module Baseball
+    class Second
+        attr_reader :name, :number
+        def initialize(name, number)
+            @name = name
+            @number = number
+        end
+    end
+end
+
+module Clock
+    class Second
+        def initialize(digits)
+            @digits = digits
+        end
+    end
+end
+
+# クラス名が同じでもモジュールが異なれば別
+# Module::Classという感じでアクセス
+bob = Baseball::Second.new("Bob", 666)
+c = Clock::Second.new(999)
+puts bob.name, alice.number
