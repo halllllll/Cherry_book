@@ -95,3 +95,36 @@ p = Product3.new
 puts Product3.title2
 # クラスメソッドなのでProduct3のtitle2クラスメソッドを経由しなくても直接呼び出せる
 puts Product3.log "yoyoyoo"
+
+# 独自クラスに組み込みのモジュールをincludeして便利に使ってみる
+# Comparableモジュール
+# このモジュールのメソッド(比較とか)を独自クラスで使えるようにするための条件は、include先のクラスが<=>演算子を実装していること
+
+class Genre
+    include Comparable
+    attr_reader :name, :bpm
+    
+    def initialize(name, bpm)
+        @name = name
+        @bpm = bpm
+    end
+
+    def <=>(other)
+        if other.is_a?(Genre)
+            # bpmはIntegerクラスを想定している
+            # Intergerクラスは<=>を実装している
+            bpm <=> other.bpm
+        elsif
+            nil
+        end
+    end
+end
+
+enka = Genre.new("演歌", 50)
+randb = Genre.new("R&B", 80)
+edm = Genre.new("EDM", 120)
+breakcore = Genre.new("ブレイクコア", 250)
+# いずれも比較可能
+puts enka < randb
+puts breakcore < edm
+puts enka == edm
