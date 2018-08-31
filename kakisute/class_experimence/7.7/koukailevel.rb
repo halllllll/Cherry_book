@@ -113,3 +113,57 @@ user = User.new
 # puts user.foo -> NoMethodError
 # puts user.bar -> NoMethodError
 puts user.baz
+
+# 7.7.7 protected method
+class User
+    attr_reader :name
+    
+    def initialize(name, weight)
+        @name = name
+        @weight = weight
+    end
+
+    def heavier_than?(other_user)
+        other_user.weight < @weight
+    end
+
+    # protected method
+    # protected以下は同じクラス・サブクラスから呼び出せる
+    protected
+    def weight
+        @weight
+    end
+end
+
+alice = User.new('Alice', 55)
+# puts someone.name
+# puts someone.weight # -> NoMethodError
+bob = User.new('Bob', 69)
+
+puts alice.heavier_than?(bob)
+
+# クラスの外からの呼び出しはできない
+# puts alice.weight   # -> NoMethodError
+
+# 単純なgetter methodを実装するならば、最初に一旦attr_readerしておいて、あとからprotectedをかけるのがシンプル
+
+class User
+    # いったん呼び出せるようにしておく
+    attr_reader :name, :weight
+    # あとからprotectする
+    protected :weight
+    
+    def initialize(name, weight)
+        @name = name
+        @weight = weight
+    end
+
+    def heavier_than?(other_user)
+        other_user.weight < @weight
+    end
+end
+
+calen = User.new('Calen', 100)
+devola = User.new('Devola', 80)
+
+puts calen.heavier_than?(devola)
