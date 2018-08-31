@@ -46,7 +46,7 @@ module Loggable
     end
 end
 
-class Product
+class Product2
     include Loggable
      
     def title
@@ -63,12 +63,35 @@ class User
     end
 end
 
-product = Product.new
+product = Product2.new
 puts product.title
 
 user = User.new
 puts user.name
 
 # includeしたらデフォルトではpublicなので外部からアクセス可能
-# ...のはずなのだがそのままにしようが明示的にpublicとつけようがprivateをつけようがNoMethodErrorが返るんだけど完全に意味不明 もうめんどくさいから検証はしない
-# puts user.log 'yoyoyoy'
+# アクセスさせたくないときはmodule内部でprivateとかにしてやる
+puts product.title
+
+# extendを使うと特異メソッド（クラスメソッド）になる
+
+class Product3
+    extend Loggable
+    # logはクラスメソッドなのでふつうのインスタンスメソッドからは呼べない
+    # これはエラーになる
+    # def title1
+    #     log "title is called"
+    #     "nanika"
+    # end
+    # logはクラスメソッドなのでクラスメソッドから呼べる
+    def self.title2
+        log "nemui"
+        "tsukareta"
+    end
+end
+
+p = Product3.new
+# puts p.title2 クラスメソッドなのでインスタンスからは呼び出せない、だっけ？
+puts Product3.title2
+# クラスメソッドなのでProduct3のtitle2クラスメソッドを経由しなくても直接呼び出せる
+puts Product3.log "yoyoyoo"
