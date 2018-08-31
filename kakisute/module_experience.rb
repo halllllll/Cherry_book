@@ -158,3 +158,37 @@ end
 bob = Baseball::Second.new("Bob", 666)
 c = Clock::Second.new(999)
 puts bob.name, bob.number
+
+
+# refinements
+# 正直使いみちがよくわからんっつーか
+# 独自実装の有効範囲を限定できるやつ。モジュール構文でメソッドを定義
+# 有効範囲を限定するクラス/モジュールを作り、その中でのみ有効となる
+
+module StringShuffle
+    # refine 適用するクラス名/モジュール名
+    refine String do
+        def shuffle
+            chars.shuffle.join
+        end
+    end
+end
+
+class Moji
+    # このクラス内部でのみ有効化
+    # using モジュール名
+    using StringShuffle
+
+    def initialize(somemoji)
+        @somemoji = somemoji
+    end
+
+    def mojishuffle
+        @somemoji.shuffle
+    end
+end
+
+moji = Moji.new("すずみやはるひ")
+puts moji.mojishuffle
+# クラス外からは使えない
+# puts "すずみやはるひ".shuffle
