@@ -142,16 +142,19 @@ module Baseball
     end
 end
 
+# モジュールがすでに存在している場合はそこにくっつける形でクラスを追加できる
 module Clock
-    class Second
-        def initialize(digits)
-            @digits = digits
-        end
+end
+
+class Clock::Second
+    def initialize(digits)
+        @digits = digits
     end
 end
+
 
 # クラス名が同じでもモジュールが異なれば別
 # Module::Classという感じでアクセス
 bob = Baseball::Second.new("Bob", 666)
 c = Clock::Second.new(999)
-puts bob.name, alice.number
+puts bob.name, bob.number
