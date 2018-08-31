@@ -34,7 +34,7 @@ RSpec.describe Calculation do
     it '1-1=0?'
 
     # mathcer
-    describe 'mather test' do
+    describe 'matcer test' do
         it 'should not equal' do
             # expect(@calculation.add(2, 100)).not_to eq 29
             expect(calc.add(2, 100)).not_to eq 29
