@@ -71,3 +71,21 @@ rescue => exception
         retry
     end
 end
+
+# raise
+# 意図的に例外を発生させる
+def currency(country)
+    case country
+    when :japan
+        "yen"
+    when :us
+        "dollar"
+    when :india
+        "rupee"
+    else
+        raise "woooooooooooooooooooooo"
+    end
+end
+
+puts currency(:japan)
+puts currency(:doutch)
