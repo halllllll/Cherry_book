@@ -7,6 +7,6 @@ module Greeter
     end
 end
 
-greeter = Gretter.new
+greeter = Greeter.new
 
 puts "End"
