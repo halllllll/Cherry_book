@@ -1,5 +1,5 @@
 # 例外処理
-
+# モジュールからインスタンスを作ろうとする(作れないのでNoMethodErrorとなる)
 puts "Start"
 module Greeter
     def hello
@@ -7,6 +7,15 @@ module Greeter
     end
 end
 
-greeter = Greeter.new
+# これはエラー
+# greeter = Greeter.new
+
+# 例外処理に組み込む
+begin
+    # この節で発生した例外はrescueでキャッチされる
+    greeter = Greeter.new
+rescue
+    puts "例外が発生したよ"
+end
 
 puts "End"
