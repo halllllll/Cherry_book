@@ -83,9 +83,21 @@ def currency(country)
     when :india
         "rupee"
     else
-        raise "woooooooooooooooooooooo"
+        # raise "woooooooooooooooooooooo"
     end
 end
 
 puts currency(:japan)
 puts currency(:doutch)
+
+# ensure
+# 例外の有無にかかわらず必ず実行
+# べつにrescureと一緒に使う必要はない
+
+file = File.open("kakisute/some.txt", 'w')
+
+begin
+    file << "Hello"
+ensure
+    file.close
+end
