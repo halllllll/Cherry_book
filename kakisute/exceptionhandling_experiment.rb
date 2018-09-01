@@ -27,12 +27,18 @@ def method_1
     puts "method_1 start"
     begin
         method_2
+    rescue NoMethodError
+        # NoMethodErrorが発生したときのみ
+        puts "NME!! NME!!"
+    rescue ZeroDivisionError
+        # ZeroDivisionErrorが発生したときのみ
+        puts "ZDE!! ZDE!!"
     rescue => exception
         # puts "どっかで例外が発生した"
         # exceptionは例外オブジェクト
         puts "class: #{exception.class}"
         puts exception.message
-        puts exception.backtrace
+        # puts exception.backtrace
     end
     puts "method_1 end"
 end
@@ -50,3 +56,18 @@ def method_3
 end
 
 method_1
+
+# retry
+# 例外が発生したらやり直す
+count = 3
+begin
+    puts "#{count}"
+    count/0
+rescue => exception
+    puts exception.message
+    puts "やり直すわ" 
+    count-=1
+    if count > 0
+        retry
+    end
+end
