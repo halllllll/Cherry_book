@@ -1,9 +1,16 @@
 print "Text here: "
 text = gets.chomp
-print "Pattern? :"
-pattern = gets.chomp
 
-regexp = Regexp.new(pattern)
+# とりあえず異常終了する前にretryする
+begin
+    print "Pattern? :"
+    pattern = gets.chomp
+    regexp = Regexp.new(pattern)
+rescue RegexpError => e
+    puts "invalid pattern: #{e.message}"
+    retry
+end
+
 matches = text.scan(regexp)
 if matches.size > 0
     puts "Matched: #{matches.join(", ")}"
