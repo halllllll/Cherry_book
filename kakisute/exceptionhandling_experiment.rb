@@ -146,3 +146,7 @@ def wowow
 end
 
 puts wowow
+
+# 修飾子としてのrescue
+# 処理 rescue 例外処理
+1 / 0 rescue puts "hoge"
