@@ -98,6 +98,20 @@ file = File.open("kakisute/some.txt", 'w')
 
 begin
     file << "Hello"
+    1 / 0
+rescue => e
+    # 例外が発生するのでここでは捕まえます
 ensure
     file.close
 end
+
+# まあ↑のやり方はブロックでかけるけど
+File.open("some.txt", "w") do |file|
+    file << "abababababababababa"
+    # 1 / 0 例外発生するけどちゃんとクローズする
+end
+
+# else
+# 「例外が発生しなかった場合に実行」
+# begin, rescue, else, ensureはこの順に書く（ensureは省略できる）
+# まあbeginで書けばいいんじゃが
