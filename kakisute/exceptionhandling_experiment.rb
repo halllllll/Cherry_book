@@ -27,8 +27,12 @@ def method_1
     puts "method_1 start"
     begin
         method_2
-    rescue
-        puts "どっかで例外が発生した"
+    rescue => exception
+        # puts "どっかで例外が発生した"
+        # exceptionは例外オブジェクト
+        puts "class: #{exception.class}"
+        puts exception.message
+        puts exception.backtrace
     end
     puts "method_1 end"
 end
