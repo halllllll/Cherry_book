@@ -115,3 +115,34 @@ end
 # 「例外が発生しなかった場合に実行」
 # begin, rescue, else, ensureはこの順に書く（ensureは省略できる）
 # まあbeginで書けばいいんじゃが
+
+# 戻り値
+# 例外が発生しなかった場合はbegin節の最後で評価されたやつ
+# 発生した場合はrescue節の最後で評価されたやつ
+
+# 正常終了
+ret = 
+begin
+    "OK"
+rescue => exception
+    "error"
+ensure
+    "END"
+end
+
+puts ret
+
+# 異常終了
+# 返り値なのでメソッドの返り値にも使える
+def wowow
+    begin
+        1 / 0
+        "OK"
+    rescue => exception
+        "fuck"
+    ensure
+        "nothing"
+    end
+end
+
+puts wowow
