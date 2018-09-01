@@ -2,4 +2,11 @@ print "Text here: "
 text = gets.chomp
 print "Pattern? :"
 pattern = gets.chomp
-puts text, pattern
+
+regexp = Regexp.new(pattern)
+matches = text.scan(regexp)
+if matches.size > 0
+    puts "Matched: #{matches.join(", ")}"
+else
+    puts "Nothing matched"
+end
