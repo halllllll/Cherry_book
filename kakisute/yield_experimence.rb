@@ -60,3 +60,18 @@ end
 greeting4 do |t, f|
     t + f
 end
+
+puts "--------------"
+
+# &付き引数
+# 明示的にブロックを受け取ることを表現
+def greeting5(&block)
+    puts "morning5"
+    text = block.call("HELLO5", "fuckfuck")
+    puts text
+    puts "evening5" 
+end
+
+greeting5 do |t, f|
+    t + f
+end
