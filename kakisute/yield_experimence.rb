@@ -47,3 +47,16 @@ greeting3
 greeting3 do
     puts "yoyoyyoyooyoooiamblockkkkkkk"
 end
+
+puts "-------------"
+# 読んでもいまいち意味が掴みかねる文章だったyieldの書き方
+def greeting4
+    puts "morning4"
+    text = yield "hello4", "fuck"
+    puts text
+    puts "evening4"
+end
+
+greeting4 do |t, f|
+    t + f
+end
