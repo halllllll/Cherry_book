@@ -26,3 +26,6 @@ end
 greeting2 do
     puts "hello 2"  # yieldのぶんだけ繰り返される
 end
+
+# yield付きのメソッドにブロックで渡さないとエラー
+# greeting2 -> no block given (yield)
