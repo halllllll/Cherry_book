@@ -29,3 +29,21 @@ end
 
 # yield付きのメソッドにブロックで渡さないとエラー
 # greeting2 -> no block given (yield)
+
+puts "-------------"
+
+# block_given?
+# メッソド内で使う 引数がブロックで渡されたかどうか
+def greeting3
+    if block_given?
+        puts "given block arg"
+        yield
+    else
+        puts "not given block arg"
+    end
+end
+
+greeting3
+greeting3 do
+    puts "yoyoyyoyooyoooiamblockkkkkkk"
+end
