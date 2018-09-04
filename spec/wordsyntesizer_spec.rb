@@ -24,5 +24,11 @@ RSpec.describe "word synthesizerのテスト" do
             expect(@effects.reverse.call(@nemui)).to eq "iumen"
             expect(@effects.reverse.call(@thap)).to eq "sihT si a nep"
         end
+
+        it "invoke Echo method" do
+            expect(@effects.echo(2).call(@dora)).to eq "DDoorraaeemmoonn"
+            expect(@effects.echo(2).call(@thap)).to eq "TThhiiss iiss aa ppeenn"
+            expect(@effects.echo(4).call(@nemui)).to eq "nnnneeeemmmmuuuuiiii"
+        end
     end
 end
