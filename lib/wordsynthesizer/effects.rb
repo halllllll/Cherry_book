@@ -11,4 +11,10 @@ module Effects
             word.chars.map{|w| w==" " ? w : w*rate}.join
         end
     end
+
+    def self.loud(level)
+        ->(word) do
+            word.split(" ").map{|w| w.upcase + "!"*level}.join(" ")
+        end
+    end
 end

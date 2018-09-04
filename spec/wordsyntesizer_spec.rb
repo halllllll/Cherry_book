@@ -30,5 +30,10 @@ RSpec.describe "word synthesizerのテスト" do
             expect(@effects.echo(2).call(@thap)).to eq "TThhiiss iiss aa ppeenn"
             expect(@effects.echo(4).call(@nemui)).to eq "nnnneeeemmmmuuuuiiii"
         end
+
+        it "invoke Loud method" do
+            expect(@effects.loud(2).call(@dora)).to eq "DORAEMON!!"
+            expect(@effects.loud(3).call(@thap)).to eq "THIS!!! IS!!! A!!! PEN!!!"
+        end
     end
 end
